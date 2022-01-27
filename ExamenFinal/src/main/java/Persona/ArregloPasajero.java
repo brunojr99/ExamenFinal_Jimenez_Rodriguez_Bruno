@@ -21,24 +21,13 @@ public class ArregloPasajero {
         this.tamaño = tamaño;
         this.arregloP = new Pasajero[tamaño];
     }
-    public boolean VerificaLogeoPasajero(String usuario, String contraseña){
-        boolean result = false;
-        for(int i=0;i<this.indice;i++){
-            if(this.arregloP[i].getUsuario().equals(usuario)&&this.arregloP[i].getContraseña().equals(contraseña)){
-                Config.pos=i;
-                Config.pasajeroConectado =this.arregloP[i];
-                result = true;
-                break;
-            }
-        }
-        return result;
-    }
+    
         
     public boolean PasajeroValido(Pasajero documento){//Ver si un usuario ya esta registrado antes de crear otro
         boolean result = false;
         
-        if(documento.getContraseña().equals(documento.getConfPass())){//valida si son iguales
-            result = true;
+        //valida si son iguales
+         
             if(indice>0){//si el indice es mayor a 0
                 for(int i=0; i<this.indice;i++){//recorre el indice
                     if(documento.getNroDocumento().equals(this.arregloP[i].getNroDocumento())){//compara si hay un documento ya registrado
@@ -48,7 +37,7 @@ public class ArregloPasajero {
                     }  
                 }
             }
-        }
+        
         
         return result;
     }
@@ -113,6 +102,9 @@ public class ArregloPasajero {
     public static void setIndice(int indice) {
         ArregloPasajero.indice = indice;
     }
+    
+    
+    
     @Override
     public String toString() {
         String result=" ";

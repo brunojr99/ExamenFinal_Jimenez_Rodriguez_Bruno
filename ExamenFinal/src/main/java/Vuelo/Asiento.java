@@ -42,8 +42,18 @@ public class Asiento {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+    public boolean reservarAsiento(){
+        
+    return false;
+    }
+     public boolean cancelarAsiento(){
+        
+    return false;
+    }
+      public boolean venderAsiento(){
+        
+    return false;
+    }
     @Override
     public String toString() {
         return  "\nNro de Asiento=" + nroAsiento+

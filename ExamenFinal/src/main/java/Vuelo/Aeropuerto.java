@@ -43,6 +43,16 @@ public class Aeropuerto {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+    
+    public boolean suspender(){
+    
+    return false;
+    }
+    public boolean activar(){
+    
+    return false;
+    }
+    
      @Override
     public String toString() {
         return "\nnombre= " + nombreA + 

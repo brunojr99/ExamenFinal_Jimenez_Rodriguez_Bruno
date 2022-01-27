@@ -15,5 +15,19 @@ public class ArregloAeropuerto {
     public ArregloAeropuerto(int indice) {
         this.indice = indice;
     }
-    
+   public boolean agregar(Aeropuerto a){
+   
+   
+   return false;
+   } 
+   public Aeropuerto getAeropuerto(Pais pais){
+   
+   
+    return null;
+   }
+    public Aeropuerto getAeropuerto(Ciudad ciudad){
+   
+   
+    return null;
+   }
 }
