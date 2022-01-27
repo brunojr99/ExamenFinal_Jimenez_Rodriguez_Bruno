@@ -66,7 +66,10 @@ public class Vuelo {
     }
     
     public boolean venderAsiento(Pasajero p, int nroasiento, char fila){
-        return true;
+        if(p.getCodAsiento() == nroasiento && p.getFilaAsiento() == fila){
+            return true;
+        }
+        return false;
     }
     
 }

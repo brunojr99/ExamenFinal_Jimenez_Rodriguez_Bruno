@@ -17,7 +17,8 @@ public class Pasajero {
     private String nombre;
     private String apellido;
     private String fechaNacimiento;
-    
+    private int codAsiento;
+    private char filaAsiento;
     public Pasajero(String tipoDocumento, String nroDocumento, String nombre, String apellido, String fechaNacimiento) {
        
         this.tipoDocumento = tipoDocumento;
@@ -68,7 +69,23 @@ public class Pasajero {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    
+    public int getCodAsiento() {
+        return codAsiento;
+    }
+
+    public void setCodAsiento(int codAsiento) {
+        this.codAsiento = codAsiento;
+    }
+
+    public char getFilaAsiento() {
+        return filaAsiento;
+    }
+
+    public void setFilaAsiento(char filaAsiento) {
+        this.filaAsiento = filaAsiento;
+    }
+
+
 
    
     public String toString() {

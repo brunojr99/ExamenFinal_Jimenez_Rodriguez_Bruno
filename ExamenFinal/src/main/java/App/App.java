@@ -9,6 +9,7 @@ import Vuelo.Aeropuerto;
 import Vuelo.ArregloAeropuerto;
 import Vuelo.Ciudad;
 import Vuelo.Pais;
+import Vuelo.PaisArreglo;
 
 /**
  *
@@ -21,7 +22,7 @@ public class App {
         Aeropuerto a2 = new Aeropuerto("Tupac Amaru", "Av. Peru 313", "Cuzco");
         Aeropuerto a3 = new Aeropuerto("Machu Picchu", "Av. Universitaria 4241", "Buenos Aires");
         // ArregloAeropuertos
-        ArregloAeropuerto aeropuertos = new ArregloAeropuerto(1);
+        ArregloAeropuerto aeropuertos = new ArregloAeropuerto(0);
         aeropuertos.agregar(a1);
         aeropuertos.agregar(a2);
         aeropuertos.agregar(a3);
@@ -30,9 +31,8 @@ public class App {
             System.out.println("Ciudad :"+ciudad[i].toString());
         }*/
         // Inicializando paises
-        Pais[] pais = new Pais[2];
-        pais[0] = new Pais("100P", "Peru");
-        pais[1] = new Pais("200P", "Argentina");
+        Pais p1 = new Pais("100P", "Peru");
+        Pais p2 = new Pais("200P", "Argentina");
         //
         // Inicializando ciudades
         Ciudad[] ciudades = new Ciudad[50];
@@ -42,12 +42,18 @@ public class App {
         ciudades[1].setAeropuerto(a2);
         ciudades[2] = new Ciudad("300C", "Buenos Aires", "200P");
         ciudades[2].setAeropuerto(a3);
-        Ciudad[] ciudad_del_pais = pais[0].getCiudades(pais[0].getCodigo(), ciudades);
-        /*int i = 0;
+        Ciudad[] ciudad_del_pais = p1.getCiudades(p1.getCodigo(), ciudades);
+        
+        int i = 0;
         while(ciudad_del_pais[i]!=null){
             System.out.println("Ciudad :"+ciudad_del_pais[i].toString());
               i++;
-        }*/
+        }
+        // Pais Arreglo
+        PaisArreglo paises = new PaisArreglo(0);
+        paises.agregar(p1);
+        paises.agregar(p2);
+        //
         
     }
 }
