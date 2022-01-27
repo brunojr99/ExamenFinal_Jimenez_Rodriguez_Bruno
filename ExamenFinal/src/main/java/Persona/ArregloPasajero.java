@@ -16,11 +16,12 @@ public class ArregloPasajero {
     private Pasajero arregloP[];
     private int tamaño;
     
-    public ArregloPasajero(int indice) {
-        this.indice = indice;
-        this.arregloP = new Pasajero[indice];
+    public ArregloPasajero(int tamaño) {
+        this.indice = 0;
+        this.tamaño = tamaño;
+        this.arregloP = new Pasajero[tamaño];
     }
-    public boolean VerificaLogeoClie(String usuario, String contraseña){
+    public boolean VerificaLogeoPasajero(String usuario, String contraseña){
         boolean result = false;
         for(int i=0;i<this.indice;i++){
             if(this.arregloP[i].getUsuario().equals(usuario)&&this.arregloP[i].getContraseña().equals(contraseña)){
@@ -33,7 +34,7 @@ public class ArregloPasajero {
         return result;
     }
         
-    public boolean ClieValido(Pasajero documento){//Ver si un usuario ya esta registrado antes de crear otro
+    public boolean PasajeroValido(Pasajero documento){//Ver si un usuario ya esta registrado antes de crear otro
         boolean result = false;
         
         if(documento.getContraseña().equals(documento.getConfPass())){//valida si son iguales
@@ -51,6 +52,83 @@ public class ArregloPasajero {
         
         return result;
     }
+    public boolean agregarPasajero(Pasajero usuario){
+        boolean result = false;
+        Pasajero documento = null;
+        documento = usuario;
+            if(PasajeroValido(documento)){//Si es true va a agregar
+                if(PasajeroLleno()){//Si esta lleno aumentara tamaño
+                    crecerPasajero(); 
+                }
+            this.arregloP[this.indice] = usuario;
+            this.indice = indice +1;
+            result = true;
+        
+            }
+        
+        return result;
+    }
+    private void crecerPasajero(){//hara que el arreglo crezca
+        Pasajero arregloP2[];
+        if(PasajeroLleno()){
+            arregloP2 = new Pasajero[tamaño];
+            for(int i=0;i<tamaño;i++){
+                arregloP2[i] = arregloP[i];
+            }
+            arregloP = new Pasajero[tamaño+1];
+            for(int i=0;i<tamaño-1;i++){
+                arregloP[i]=arregloP2[i];
+            }
+        }
+    }
+    private boolean PasajeroLleno(){//metodo para validar si el arreglo esta lleno para hacerlo crecer
+        boolean result = false;
+        if(this.indice == this.tamaño){
+            
+            result = true;
+        }
+        return result;
+    }
+        
+    private boolean PasajeroVacio(){
+        boolean result = false;
+        if(this.indice == 0){
+            result=true;
+        }
+        return result;
+    }
+
+    public Pasajero[] getArregloP() {
+        return arregloP;
+    }
+
+    public void setArregloP(Pasajero[] arregloP) {
+        this.arregloP = arregloP;
+    }
+
+    public static int getIndice() {
+        return indice;
+    }
+
+    public static void setIndice(int indice) {
+        ArregloPasajero.indice = indice;
+    }
+    @Override
+    public String toString() {
+        String result=" ";
+        
+        for(int i =0;i<this.indice;i++){
+            result += this.arregloP[i];
+            
+        }
+        
+        return result;
+    }
+    
+    
+    
+    
+    
     
     
 }
