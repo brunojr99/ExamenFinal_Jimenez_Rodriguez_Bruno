@@ -12,7 +12,6 @@ package Vuelo;
 public class Pais {
     private String codigo;
     private String nombre;
-    private static Ciudad[] ciudadArreglo;
     public Pais(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -35,23 +34,18 @@ public class Pais {
         this.nombre = nombre;
     }
     
-    public Ciudad[] setCiudades(String codPais, Ciudad[] ciudades){
-        Ciudad[] temp = new Ciudad[3];
+    public Ciudad[] getCiudades(String codPais,Ciudad[] ciudades){
+        Ciudad[] temp = new Ciudad[50];
         int cont = 0;
-        int i=0;
-       while(ciudades[i]!= null){
-        if(ciudades[i].getPais().getCodigo().equalsIgnoreCase(codPais)){         
+        int i = 0;
+        while(ciudades[i]!=null){
+        if(ciudades[i].getCodPais().equalsIgnoreCase(codPais)){         
             temp[cont]=ciudades[i];
             cont++;
         }
         i++;
        }
-       this.ciudadArreglo = temp;
        return temp;
-    }
-    
-    public Ciudad[] getCiudades(){
-        return ciudadArreglo;
     }
     
     @Override

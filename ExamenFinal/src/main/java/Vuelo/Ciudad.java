@@ -12,14 +12,14 @@ package Vuelo;
 public class Ciudad {
     private String codigo;
     private String nombre;
-    private Pais pais;
+    private String codPais;
     private Aeropuerto aeropuerto;
     
 
-    public Ciudad(String codigo, String nombre, Pais pais) {
+    public Ciudad(String codigo, String nombre, String CodPais) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.pais = pais;
+        this.codPais = CodPais;
     }
 
     public String getCodigo() {
@@ -38,13 +38,15 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public Pais getPais() {
-        return pais;
+    public String getCodPais() {
+        return codPais;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setCodPais(String codPais) {
+        this.codPais = codPais;
     }
+
+ 
 
    
     /*
@@ -75,9 +77,10 @@ public class Ciudad {
 
     @Override
     public String toString() {
-        return "Ciudad{" + "codigo=" + codigo + ", nombre=" + nombre + ", pais=" + pais + ", aeropuerto=" + aeropuerto + '}';
+        return "Ciudad{" + "codigo=" + codigo + ", nombre=" + nombre + ", codPais=" + codPais + ", aeropuerto=" + aeropuerto + '}';
     }
 
+    
    
 
     

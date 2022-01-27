@@ -35,20 +35,19 @@ public class App {
         pais[1] = new Pais("200P", "Argentina");
         //
         // Inicializando ciudades
-        Ciudad[] ciudades = new Ciudad[3];
-        ciudades[0] = new Ciudad("100C", "Lima", pais[0]);
+        Ciudad[] ciudades = new Ciudad[50];
+        ciudades[0] = new Ciudad("100C", "Lima", "100P");
         ciudades[0].setAeropuerto(a1);
-        ciudades[1] = new Ciudad("200C", "Cuzco", pais[0]);
+        ciudades[1] = new Ciudad("200C", "Cuzco", "100P");
         ciudades[1].setAeropuerto(a2);
-        ciudades[2] = new Ciudad("300C", "Buenos Aires", pais[1]);
+        ciudades[2] = new Ciudad("300C", "Buenos Aires", "200P");
         ciudades[2].setAeropuerto(a3);
-        System.out.println(pais[0].getCodigo());
-        pais[0].setCiudades(pais[0].getCodigo(),ciudades );
-        Ciudad[] ciudad_del_pais = pais[0].getCiudades();
-        int i = 0;
-        while(ciudad_del_pais!=null){
+        Ciudad[] ciudad_del_pais = pais[0].getCiudades(pais[0].getCodigo(), ciudades);
+        /*int i = 0;
+        while(ciudad_del_pais[i]!=null){
             System.out.println("Ciudad :"+ciudad_del_pais[i].toString());
-        i++;    
-    }
+              i++;
+        }*/
+        
     }
 }
