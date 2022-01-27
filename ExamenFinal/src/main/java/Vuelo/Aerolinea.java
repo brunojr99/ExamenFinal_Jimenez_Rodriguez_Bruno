@@ -17,6 +17,10 @@ public class Aerolinea {
         this.nombre = nombre;
         this.RUC = RUC;
     }
+    
+    
+    
+    
       @Override
     public String toString() {
         return  "\nnombre =" + nombre+
@@ -24,4 +28,5 @@ public class Aerolinea {
                 "\n";
                 
     }
+    
 }

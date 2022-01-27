@@ -11,19 +11,22 @@ import java.util.Date;
  *
  * @author USER
  */
-public class Pasajero {
+public class Pasajero extends Login {
     private String tipoDocumento;
     private String nroDocumento;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
-
-    public Pasajero(String tipoDocumento, String nroDocumento, String nombre, String apellido, Date fechaNacimiento) {
+    private String fechaNacimiento;
+    private String confPass;
+    public Pasajero(String tipoDocumento, String nroDocumento, String nombre, String apellido, String fechaNacimiento,
+            String usuario,String contraseña,String confPass) {
+        super(usuario, contraseña);
         this.tipoDocumento = tipoDocumento;
         this.nroDocumento = nroDocumento;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
+        this.confPass = confPass;
     }
 
     public String getTipoDocumento() {
@@ -58,19 +61,28 @@ public class Pasajero {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getConfPass() {
+        return confPass;
+    }
+
+    public void setConfPass(String confPass) {
+        this.confPass = confPass;
     }
 
     @Override
     public String toString() {
         return "\nnombre= " + nombre + 
                 "\napellido=" + apellido+
-                "\ndocumento= " + nroDocumento + 
+                "\ndocumento= " + nroDocumento+ 
+                super.toString()+
                 "\nfecha de nacimiento=" + fechaNacimiento +"\n";
                 
     }
