@@ -16,9 +16,10 @@ public class Aeropuerto {
     private boolean estado;
     private String  codCiudad;
     
-    public Aeropuerto(String nombreA, String direccion) {
+    public Aeropuerto(String nombreA, String direccion, String codCiudad) {
         this.nombreA = nombreA;
         this.direccion = direccion;
+        this.codCiudad = codCiudad;
     }
 
     public String getNombreA() {

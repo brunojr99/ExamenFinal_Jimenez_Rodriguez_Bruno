@@ -33,8 +33,8 @@ public class ArregloAeropuerto {
     public static void setArregloAeropuertos(Aeropuerto[] arregloAeropuertos) {
         ArregloAeropuerto.arregloAeropuertos = arregloAeropuertos;
     }
-   public Aeropuerto[] getAeropuerto(Pais pais){
-       Ciudad[] ciudades = Pais.getCiudades(pais.getNombre()) ;
+   public Aeropuerto[] getAeropuertoPorPais(Pais pais){
+       Ciudad[] ciudades = pais.getCiudades();
               
         Aeropuerto[] temp = new Aeropuerto[50];
         int i=0;
@@ -53,11 +53,8 @@ public class ArregloAeropuerto {
    
     
    }
-    public Aeropuerto getAeropuerto(Ciudad ciudad){
-        
-    return Ciudad.getAeropuertos(ciudad.getNombre());
-    
-    
+    public Aeropuerto getAeropuertoPorCiudad(Ciudad ciudad){
+    return ciudad.getAeropuerto();
    }
     
 }

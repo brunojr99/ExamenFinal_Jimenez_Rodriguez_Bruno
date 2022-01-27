@@ -12,14 +12,14 @@ package Vuelo;
 public class Ciudad {
     private String codigo;
     private String nombre;
-    private String codPais;
+    private Pais pais;
     private Aeropuerto aeropuerto;
     
 
-    public Ciudad(String codigo, String nombre, Aeropuerto aeropuerto) {
+    public Ciudad(String codigo, String nombre, Pais pais) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.aeropuerto = aeropuerto;
+        this.pais = pais;
     }
 
     public String getCodigo() {
@@ -38,18 +38,19 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public String getCodPais() {
-        return codPais;
+    public Pais getPais() {
+        return pais;
     }
 
-    public void setCodPais(String codPais) {
-        this.codPais = codPais;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
-    
-    public static Aeropuerto getAeropuertos(String codCiudad){
+
+   
+    /*
+    public static Aeropuerto getAeropuerto(String codCiudad){
         Aeropuerto[] aeropuertoArreglo = ArregloAeropuerto.getArregloAeropuertos() ;
         Aeropuerto temp = null;
-        
         int i=0;
        while(aeropuertoArreglo[i]!= null){
         if(aeropuertoArreglo[i].getCodCiudad().equalsIgnoreCase(codCiudad)){
@@ -62,11 +63,22 @@ public class Ciudad {
        
     return temp;
     }
-
+*/
 
     public Aeropuerto getAeropuerto() {
         return aeropuerto;
     }
+
+    public void setAeropuerto(Aeropuerto aeropuerto) {
+        this.aeropuerto = aeropuerto;
+    }
+
+    @Override
+    public String toString() {
+        return "Ciudad{" + "codigo=" + codigo + ", nombre=" + nombre + ", pais=" + pais + ", aeropuerto=" + aeropuerto + '}';
+    }
+
+   
 
     
 }

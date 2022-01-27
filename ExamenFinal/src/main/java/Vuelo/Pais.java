@@ -16,7 +16,7 @@ public class Pais {
     public Pais(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.ciudadArreglo = new Ciudad[50];
+        //this.ciudadArreglo = new Ciudad[50];
     }
 
     public String getCodigo() {
@@ -35,28 +35,24 @@ public class Pais {
         this.nombre = nombre;
     }
     
-    public static Ciudad[] getCiudades(String codPais){
-        Ciudad[] temp = new Ciudad[50];
+    public Ciudad[] setCiudades(String codPais, Ciudad[] ciudades){
+        Ciudad[] temp = new Ciudad[3];
         int cont = 0;
         int i=0;
-       while(ciudadArreglo[i]!= null){
-        if(ciudadArreglo[i].getCodPais().equalsIgnoreCase(codPais)){
-            
-            temp[cont]=ciudadArreglo[i];
+       while(ciudades[i]!= null){
+        if(ciudades[i].getPais().getCodigo().equalsIgnoreCase(codPais)){         
+            temp[cont]=ciudades[i];
             cont++;
         }
         i++;
        }
+       this.ciudadArreglo = temp;
        return temp;
     }
     
-    
-    
-    
-    
-    
-    
-    
+    public Ciudad[] getCiudades(){
+        return ciudadArreglo;
+    }
     
     @Override
     public String toString() {
