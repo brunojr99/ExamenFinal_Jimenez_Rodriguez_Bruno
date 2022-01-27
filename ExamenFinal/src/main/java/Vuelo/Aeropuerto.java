@@ -14,7 +14,8 @@ public class Aeropuerto {
     private String nombreA;
     private String direccion;
     private boolean estado;
-
+    private String  codCiudad;
+    
     public Aeropuerto(String nombreA, String direccion) {
         this.nombreA = nombreA;
         this.direccion = direccion;
@@ -42,6 +43,14 @@ public class Aeropuerto {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public String getCodCiudad() {
+        return codCiudad;
+    }
+
+    public void setCodCiudad(String codCiudad) {
+        this.codCiudad = codCiudad;
     }
     
     public boolean suspender(){

@@ -12,6 +12,9 @@ package Vuelo;
 public class Ciudad {
     private String codigo;
     private String nombre;
+    private String codPais;
+    private Aeropuerto aeropuerto;
+    
 
     public Ciudad(String codigo, String nombre) {
         this.codigo = codigo;
@@ -33,10 +36,36 @@ public class Ciudad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public Aeropuerto getAeropuertos(String codCiudad){
-        Aeropuerto aeropuerto;
-        
-        return null;
+
+    public String getCodPais() {
+        return codPais;
     }
+
+    public void setCodPais(String codPais) {
+        this.codPais = codPais;
+    }
+    
+    public static Aeropuerto getAeropuertos(String codCiudad){
+        Aeropuerto[] aeropuertoArreglo = ArregloAeropuerto.getArregloAeropuertos() ;
+        Aeropuerto temp = null;
+        
+        int i=0;
+       while(aeropuertoArreglo[i]!= null){
+        if(aeropuertoArreglo[i].getCodCiudad().equalsIgnoreCase(codCiudad)){
+            
+            temp=aeropuertoArreglo[i];
+            break;
+        }
+        i++;
+       }
+       
+    return temp;
+    }
+
+
+    public Aeropuerto getAeropuerto() {
+        return aeropuerto;
+    }
+
+    
 }
