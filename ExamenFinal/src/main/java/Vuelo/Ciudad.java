@@ -33,4 +33,10 @@ public class Ciudad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public Aeropuerto getAeropuertos(String codCiudad){
+        Aeropuerto aeropuerto;
+        
+        return null;
+    }
 }

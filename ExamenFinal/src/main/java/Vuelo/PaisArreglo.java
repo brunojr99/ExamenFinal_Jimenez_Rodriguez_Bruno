@@ -15,4 +15,25 @@ public class PaisArreglo {
     public PaisArreglo(int indice) {
         this.indice = indice;
     }
+
+    public int getIndice() {
+        return indice;
+    }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
+    }
+    
+    public boolean agregar(Pais p){
+        return false;
+    }
+    
+    public Pais getPais(String codigo){
+        return null;
+    }
+      
+    public boolean eliminar(String codigo){
+        return false;
+    }
+    
 }

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author USER
  */
-public class Pasajero extends Login {
+public class Pasajero {
     private String tipoDocumento;
     private String nroDocumento;
     private String nombre;

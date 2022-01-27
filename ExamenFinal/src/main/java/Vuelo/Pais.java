@@ -34,7 +34,10 @@ public class Pais {
         this.nombre = nombre;
     }
     
-    
+    public void getCiudades(String codPais){
+        
+        //return null;
+    }
     
     
     
