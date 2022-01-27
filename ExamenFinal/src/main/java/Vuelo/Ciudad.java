@@ -16,9 +16,10 @@ public class Ciudad {
     private Aeropuerto aeropuerto;
     
 
-    public Ciudad(String codigo, String nombre) {
+    public Ciudad(String codigo, String nombre, Aeropuerto aeropuerto) {
         this.codigo = codigo;
         this.nombre = nombre;
+        this.aeropuerto = aeropuerto;
     }
 
     public String getCodigo() {

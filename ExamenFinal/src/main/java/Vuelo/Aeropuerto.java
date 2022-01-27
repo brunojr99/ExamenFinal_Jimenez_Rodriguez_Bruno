@@ -54,12 +54,12 @@ public class Aeropuerto {
     }
     
     public boolean suspender(){
-    
-    return false;
+        this.estado = false;
+        return false;
     }
     public boolean activar(){
-    
-    return false;
+    this.estado = true;
+    return true;
     }
     
      @Override

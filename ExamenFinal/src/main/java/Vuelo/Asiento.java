@@ -13,7 +13,6 @@ public class Asiento {
     private int nroAsiento;
     private char fila;
     private String estado;
-
     public Asiento(int nroAsiento, char fila) {
         this.nroAsiento = nroAsiento;
         this.fila = fila;

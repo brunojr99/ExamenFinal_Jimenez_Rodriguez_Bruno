@@ -5,6 +5,8 @@
  */
 package Vuelo;
 
+import Persona.Pasajero;
+
 /**
  *
  * @author USER
@@ -63,5 +65,8 @@ public class Vuelo {
         this.activo = activo;
     }
     
+    public boolean venderAsiento(Pasajero p, int nroasiento, char fila){
+        return true;
+    }
     
 }
